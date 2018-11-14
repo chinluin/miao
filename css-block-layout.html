@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .a {
+      background-color: black;
+      color: white;
+      padding-left: calc(50% - 300px);
+      margin-top: 0;
+    }
+    .b {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    div {
+     width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ul {
+      padding: 0
+    }
+    li {
+      margin-left: 0;
+      box-sizing: border-box;
+      list-style-type: none;
+      border:3px solid;
+      width: 180px;
+      height: 40px;
+      background-color: pink;
+      margin-top: 15px;    
+    }
+    li:nth-child(n+5) {
+      margin-left: 210px;
+    }
+    li:nth-child(n+9) {
+      margin-left: 420px;
+    }
+    li:nth-child(4n+5) {
+      margin-top: -205px;
+    }
+    section {
+      margin-top: 6px;
+      text-align: center;
+    }
+    li:hover {
+      background-color: red;
+    }
+    span {
+      display: block;
+      border-bottom: 1px dotted;
+    }
+    span:last-child {
+      border:none;
+    }
+    .c,.d {
+      text-align: center;
+      background-color: #ee82ee;
+    }
+    .c {
+      margin-bottom: 0px;
+    }
+    .d {
+      margin-top: 0px;
+    }
+</style>
+  <title>块元素</title>
+</head>
+<body>
+  <p class="a">hello world 请调整浏览器窗口大小查看效果</p>
+  <p class="b">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+  <div>
+    <ul>
+      <li><section>宽180高40(包含边框)</section></li>
+      <li><section>水平间隙30px</section></li>
+      <li><section>垂直间隙15px</section></li>
+      <li><section>边框宽度3px</section></li>
+      <li><section>产品</section></li>
+      <li><section>产品<section></li>
+      <li><section>产品</section></li>
+      <li><section>产品</section></li>
+      <li><section>产品</section></li>
+      <li><section>产品</section></li>
+      <li><section>产品</section></li>
+      <li><section>产品</section></li>
+    </ul>
+  </div>
+  <div>
+    <span>link</span>
+    <span>link</span>
+    <span>link</span>
+    <span>link</span>
+    <span>link</span>
+  </div>
+    <p class="c">&copy版权所有</p>
+    <p class="d">本页所有布局均使用块元素</p>
+</body>
+</html>
