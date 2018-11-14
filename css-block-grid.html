@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      background-color: rgba(0,0,0,0.08);
+      box-sizing: border-box;
+    }
+    div {
+      width: 400px;
+      height: 300px;  
+    }
+    ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+    }
+    li {
+      height: 50px;
+      width: 50px;
+      padding: 1px;
+      xdisplay: flow-root;
+      background-color: red;
+      xborder: 1px solid;
+    }
+    li:nth-child(n+4) {
+      margin-left: 50px;
+    }
+    li:nth-child(n+7) {
+       margin-left: 100px;
+    }
+    li:nth-child(3n+4) {
+      margin-top: -150px;
+    }
+    section {
+      xheight: 70px;
+      height: 50px;
+    }
+    section:hover {
+      position: relative;
+      z-index: 3;
+      width: auto;
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-top: -10px;
+      height: 70px;
+      background-color: blue;
+    }
+  </style>
+  <title>css-block-grid.html</title>
+</head>
+<body>
+  <div>
+    <ul>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+      <li><section></section></li>
+    </ul>
+  </div>
+</body>
+</html>
