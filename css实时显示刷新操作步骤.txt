@@ -1,0 +1,3 @@
+在要打开的文件所在文件夹下打开git，
+然后输入下面的命令，回车即可
+browser-sync start --server --files .
