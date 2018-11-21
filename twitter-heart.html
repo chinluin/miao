@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    div {
-      width: 29px;
-      height: 28px;
+    label {
+      display: block;
+      width: 100px;
+      height: 100px;
       border: 1px solid red;
-      margin: auto;
+      box-sizing: border-box;
       background-repeat: no-repeat;
       background-image: url(https://abs.twimg.com/a/1542244373/img/animations/web_heart_animation_edge.png);
-      background-position: -35px -36px;
+      background-position: 0px 0px;
     }
-    div:active{
-      transition:;
+    label:hover {
+      background-position: 0px 0px;
     }
+      #class:checked + label{
+      background-position:-2800px 0px !important; 
+      transition: 1s steps(28);
   </style>
   <title>Document</title>
 </head>
 <body>
-  <div>
-  </div>
+  <input type="checkbox" id="class" hidden> 
+  <label for="class"></label>
 </body>
 </html>
