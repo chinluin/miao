@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      xbackground-color: rgba(0,0,0,0.08);
+      list-style-type: none;
+      background-color: black;
+    }
+    div {
+      width: 700px;
+    }
+    ul {
+      xwidth:100%;
+      display: inline-block;
+      padding: 0px;
+    }
+    .chapter {
+      width:25%;
+      color: white;
+      font-size: 30px;
+      width: 100px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0px 30px;
+      white-space: nowrap;
+    }
+    li > ul {
+      display: none;
+      font-size: 16px;
+      line-height: 30px;
+      xborder: 1px solid red;
+      padding: 20px 0px;
+    }
+    li:hover {
+      color: red;
+      background-color: gray;
+    }
+    li:hover > ul {
+      width:155px;
+      display: block;
+      color: blue;
+    }
+    li > ul li:hover {
+      width: auto;
+      display: block;
+      color: green;
+      background-color: white;
+    }
+  </style>
+  <title>css-menu</title>
+</head>
+<body>
+  <div>
+    <ul>
+      <li class="chapter">第一回
+        <ul>
+          <li>1.1郭女侠怒砸同福店</li>
+          <li>1.2佟掌柜妙点迷路人</li>
+          <li>1.3李厨子智斗瞎老娘</li>
+          <li>1.4白盗圣惨遇赌大王</li>
+        </ul>
+      </li>
+      <li class="chapter">第二回
+        <ul>
+          <li>2.1杨蕙兰比武招郎君</li>
+          <li>2.2李大嘴施招毙煞神</li>
+          <li>2.3佟湘玉煞费良苦心</li>
+          <li>2.4莫小贝梦游影视城</li>
+        </ul>
+      </li>
+      <li class="chapter">第三回
+        <ul>
+          <li>3.1瘪十娘撒娇勾展堂</li>
+          <li>3.2赛貂蝉耍赖讹湘玉</li>
+          <li>3.3展侍卫私放真刺客</li>
+          <li>3.4祝无双泪别假卧底</li>
+        </ul>
+      </li>
+      <li class="chapter">第四回
+        <ul>
+          <li>4.1吕圣人智斗姬无命</li>
+          <li>4.2佟掌柜火拼展红绫</li>
+          <li>4.3旧爱已成如烟往事</li>
+          <li>4.4新欢直面惨淡人生</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
