@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      background-color: rgba(0,0,0,0.08);
+    }
+    body > * {
+      display: inline-block;
+    }
+    body > div {
+      width: 200px;
+      height: 300px;
+      position: relative;
+    }
+    div > div {
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      position: absolute;
+      top: 100px; 
+      left: 50px;
+    }
+
+    body > section {
+      width: 200px;
+      height: 300px;
+      line-height: 300px; 
+    }
+    section > section {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin-left: 50px;
+      vertical-align: middle;
+    }
+
+    body > aside {
+      width: 200px;
+      height: 300px; 
+    }
+    aside > aside {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin: 100px 50px;
+      text-align: center;
+      line-height: 100px;
+    }
+    
+    table {
+      border-collapse: separate;
+      border-spacing: 0px;
+      table-layout: fixed;
+      width: 300px;
+      height: 240px;
+    }
+    td {
+      box-sizing: border-box;
+      width: 100px;
+      height: 80px;
+      empty-cells: hide;
+    }
+    .a2 {
+      empty-cells: show;
+      text-align: center;
+    }
+  </style>
+  <title>center</title>
+</head>
+<body>
+  <section>
+    <section>vertical-align</section>
+  </section>
+
+   <div>
+    <div>定位</div>
+  </div>
+
+  <aside>
+    <aside>margin</aside>
+  </aside>
+    <table>
+    <tr>
+      <td class="a4"></td>
+      <td class="a5"></td>
+      <td class="a6"></td>
+    </tr>
+    <tr>
+      <td class="a1"></td>
+      <td class="a2">表格</td>
+      <td class="a3"></td>
+    </tr>
+    <tr>
+      <td class="a4"></td>
+      <td class="a5"></td>
+      <td class="a6"></td>
+    </tr>
+  </table>
+</body>
+</html>
