@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html,body {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+    }
+    #s1 {
+      width: 500px;
+      height: 281px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+    .a1 {
+      width: 20%;
+      height: 100%;
+      background-color: red;
+    }
+    .a23 {
+      width: 40%;
+      height: 100%;
+    }
+    .a2 {
+      width: 100%;
+      height: 20%;
+      background-color: blue;
+    }
+    .a3 {
+      width: 100%;
+      height: 80%;
+      background-color: green;
+    }
+    .a4 {
+      width: 20%;
+      height: 100%;
+      background-color: yellow;
+    }
+    .a5 {
+      width: 20%;
+      height: 100%;
+      background-color: tan;
+    }
+
+    #s2 {
+      width: 500px;
+      height: 281px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: (1 1 1 1);
+    }
+    .b1 {
+      width: 20%;
+      height: 100%;
+      background-color: red;
+    }
+    .b23 {
+      width: 20%;
+      height: 100%;
+      flex-grow: 1;
+    }
+    .b2 {
+      width: 100%;
+      height: 20%;
+      background-color: blue;
+    }
+    .b3 {
+      width: 100%;
+      height: 80%;
+      background-color: green;
+    }
+    .b4 {
+      width: 20%;
+      height: 100%;
+      background-color: yellow;
+    }
+    .b5 {
+      width: 20%;
+      height: 100%;
+      background-color: tan;
+    }
+  </style>
+  <title>oald-layout-flex</title>
+</head>
+<body>
+  <div id="s1">
+    <div class="a1"></div>
+    <div class="a23">
+      <div class="a2"></div>
+      <div class="a3"></div>
+    </div>
+    <div class="a4"></div>
+    <div class="a5"></div>
+  </div>
+
+  <div id="s2">
+    <div class="b1"></div>
+    <div class="b23">
+      <div class="b2"></div>
+      <div class="b3"></div>
+    </div>
+    <div class="b4"></div>
+    <div class="b5"></div>
+  </div>
+</body>
+</html>
