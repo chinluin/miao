@@ -3,44 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    table {
+    .table {
       border-collapse: collapse;
+      width: 500px;
+      height: 200px;
+      color: #000;
+      margin-top: 50px;
+    }
+    .table tr {
+      height: 50px;
       width: auto;
+      border-top: 1px solid #dee2e6;
     }
-    td {
-      border: 1px solid rgb(204,204,204);
+    .table > thead > tr {
+      border-bottom: 2px solid #dee2e6;
     }
-    .a,.c{
-      width: 1%;
-      padding: 10px;
-      background-color: rgb(238,238,238);
+    .table tr > * {
+      height: 50px;
+      width: auto;
+      text-align: center;
     }
-    .b {
-      width: 98%;
+
+    .table-dark {
+      background-color: #212529;
+      color: white; 
     }
-    input {
-      box-sizing: border-box;
-      width:100%;
-      height: 40px;
-      border: 1px solid rgb(204,204,204);
+    .table-dark tr {
+      border-color: #32383e;
     }
-    input:focus {
-      border-color: blue;
+    .table-dark > thead > tr {
+      border-bottom: 2px solid #32383e;
     }
-  </style>
+
+    .thead-dark {
+      background-color: #212529;
+      color: #fff;
+    }
+    .thead-light {
+      background-color: #e9ecef;
+      color: #495057;
+    }
+
+    .table-striped > tbody > tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+    table[class*="table-striped table-dark"] > tbody > tr:nth-child(odd) {
+      background-color: #2c3034;
+    }
+
+    .table-bordered * {
+      border: 1px solid #dee2e6;
+      
+    }
+    table[class*="table-bordered table-dark"] * {
+      border: 1px solid #32383e;
+    }
+
+    .table[class*="table table-borderless"] * {
+      border: none;
+    }
+
+    .table-hover > tbody > tr:hover {
+      background-color: #ececec;
+    }
+
+    .table-hover[class*="table-hover table-dark"] > tbody > tr:hover {
+      background-color: #323539;
+    }
+
+    .table-sm,.table-sm tr,.table-sm tr > * {
+      height: 25px;
+    }
+
+    .table-active {
+      background-color: #dadada;
+    }
+    .table-default {
+      background-color: #fff;
+    }
+    .table-primary {
+      background-color: #b8daff;
+    }
+    .table-secondary {
+      background-color: #d6d8d8;
+    }
+    .table-success {
+      background-color: #c3e6cb;
+    }
+    .table-danger {
+      background-color: #f5c6cb;
+    }
+    .table-warning {
+      background-color: #ffeeba;
+    }
+    .table-info {
+      background-color: #bee5eb;
+    }
+    .table-light {
+      background-color: #fff;
+    }
+    .table-dark {
+      background-color: #c6c8ca;
+    }
+   </style>
   <title>Document</title>
 </head>
 <body>
-  <table>
-    <tr>
-      <td class="a">$</td>
-      <td class="b">
-        <form action="https://getbootstrap.com/docs/3.3/css/#forms">
-          <input type="text" placeholder="Amount">
-        </form>
-      </td>
-      <td class="c">.00</td>
-    </tr>
+  <table class="table">
+    <thead class="">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-borderless">
+    <thead>
+      <th>Class</th>
+      <th>Heading</th>
+      <th>Heading</th>
+    </thead>
+    <tbody>
+      <tr class="table-active">
+        <th>Active</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-default">
+        <th>Default</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-primary">
+        <th>Primary</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-secondary">
+        <th>Secondary</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-success">
+        <th>Success</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-danger">
+        <th>Danger</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-warning">
+        <th>Warning</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-info">
+        <th>Info</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-light">
+        <th>Light</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr class="table-dark">
+        <th>Dark</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+    </tbody>
   </table>
 </body>
 </html>
