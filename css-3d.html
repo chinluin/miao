@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @keyframes xixi {
+      0% {transform: rotateY(0deg);}
+      100% {transform: rotateY(360deg);}
+    }
+    div {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      transform-style: preserve-3d; 
+      animation: xixi 3s 20 linear;
+    }
+    section {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 150px;
+      top: 150px;
+      xbackface-visibility: hidden;
+    }
+    section > img {
+      width: 70px;
+      height: 99px;
+    }
+    .p1 {
+      transform: rotateY(0deg) translateZ(100px);
+    }
+    .p2 {
+      transform: rotateY(60deg) translateZ(100px);
+    }
+    .p3 {
+      transform: rotateY(120deg) translateZ(100px);
+    }
+    .p4 {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+    .p5 {
+      transform: rotateY(240deg) translateZ(100px);
+    }
+    .p6 {
+      transform: rotateY(300deg) translateZ(100px);
+    }
+  </style>
+  <title>css-3d</title>
+</head>
+<body>
+  <div>
+    <section class="p1"><img src="https://i1.mifile.cn/a1/pms_1537323963.1278763!220x220.jpg"></section>
+    <section class="p2"><img src="https://i1.mifile.cn/a1/pms_1537356460.6227958!220x220.png"></section>
+    <section class="p3"><img src="https://i1.mifile.cn/a1/pms_1527685277.65255600!220x220.jpg"></section>
+    <section class="p4"><img src="https://i1.mifile.cn/a1/pms_1524621350.77238418!220x220.jpg"></section>
+    <section class="p5"><img src="https://i1.mifile.cn/a1/pms_1531878001.22998509!220x220.jpg"></section>
+    <section class="p6"><img src="https://i1.mifile.cn/a1/pms_1529635815.88254264!220x220.jpg"></section>
+  </div>
+</body>
+</html>
