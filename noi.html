@@ -3,20 +3,42 @@
   var a = +prompt("输入a")
   var b = +prompt("输入b")
   var c = +prompt("输入c")
-  var detal = b**2 - 4*a*c
-  console.log(detal)
-  if (detal > 0) {
-    var x1 = (-b + Math.sqrt(detal)) / 2 * a
-    var x2 = (-b - Math.sqrt(detal)) / 2 * a
+  var delta = b**2 - 4*a*c
+  console.log(delta)
+  if (delta > 0) {
+    var x1 = (-b + Math.sqrt(delta)) / (2 * a)
+    var x2 = (-b - Math.sqrt(delta)) / (2 * a)
     console.log(x1.toFixed(2),x2.toFixed(2))
-  } else if (detal == 0) {
-    var x = -b / 2 * a
+  } else if (delta == 0) {
+    var x = -b / (2 * a)
     console.log(x.toFixed(2))
   } else {
-    var m = Math.sqrt(-detal) + "i"
-    var x1 = (-b + m) / 2 * a
-    var x2 = (-b - m) / 2 * a
-    console.log(x1.toFixed(2),x2.toFixed(2))
+    var m = Math.sqrt(-delta)
+    var x1imag = m / (2 * a) 
+    var x2imag = - m / (2 * a)
+    var x1real = -b / (2 * a)
+    var x2real = -b / (2 * a)
+    var x1real = x1real % 1 === 0 ? x1real : x1real.toFixed(2)
+    var x1real = x1real >= 0 ? "+" + x1real : "" + x1real
+    var x1imag = x1imag % 1 === 0 ? x1imag : x1imag.toFixed(2)
+    var x2real = x2real % 1 === 0 ? x2real : x2real.toFixed(2)
+    var x2real = x2real >= 0 ? "+" + x2real : "" + x2real
+    var x2imag = x2imag % 1 === 0 ? x2imag : x2imag.toFixed(2)
+    if (x1imag === 1) {
+      x1imag = "i"
+    } else if (x1imag === -1) {
+      x1imag = "-i"
+    } else {
+      x1imag = x1imag + "i"
+    }
+    if (x2imag === 1) {
+      x2imag = "i"
+    } else if (x2imag === -1) {
+      x2imag = "-i"
+    } else {
+      x2imag = x2imag + "i"
+    }
+    console.log(x1imag + x1real,x2imag + x2real)
   }
 </script>
 <!-- 解二元一次方程 -->
@@ -125,97 +147,97 @@
 ##########################################    ############                  ##############    ############
 `)
 </script>
-<script id="cd0102/01" type="102/01">
+<script id="ch0102/01" type="102/01">
   var a = prompt("输入int")
   var b = prompt("输入short")
   var c = `"%d %d\\n",sizeof(int),sizedf(short);`
   console.log(c)
 </script>
-<script id="cd0102/02" type="102/02">
+<script id="ch0102/02" type="102/02">
   var a = prompt("输入float")
   var b = prompt("输入double")
   var c = `"%d %d\\n",sizeof(float),sizedf(double);`
   console.log(c)
 </script>
-<script id="cd0102/03" type="102/03">
+<script id="ch0102/03" type="102/03">
   var a = prompt("输入bool")
   var b = prompt("输入char")
   var c = `"%d %d\\n",sizeof(bool),sizedf(char);`
   console.log(c)
 </script>
-<script id="cd0102/04" type="102/04">
+<script id="ch0102/04" type="102/04">
   var a = prompt("输入32768")
   var b = -a
   console.log(a + " " + b)
 </script>
-<script id="cd0102/05" type="102/05">
+<script id="ch0102/05" type="102/05">
   var a = +prompt("输入1.0000000001")
   var b = a.toFixed(9)
   console.log(a + " " + b)
 </script>
-<script id="cd0102/06" type="102/06">
+<script id="ch0102/06" type="102/06">
   var a = +prompt("输入2.3")
   console.log(a.toFixed(0))
 </script>
-<script id="cd0102/07" type="102/07">
+<script id="ch0102/07" type="102/07">
   var a = prompt("输入A")
   var str = a
   console.log(str.charCodeAt())
 </script>
-<script id="cd0102/08" type="102/08">
+<script id="ch0102/08" type="102/08">
   var a = prompt("输入65")
   var num = a
   console.log(String.fromCharCode(num))
 </script>
-<script id="cd0102/09" type="102/09">
+<script id="ch0102/09" type="102/09">
   var a = +prompt("输入3")
   console.log(Boolean(a) ? 1 : 0)
 </script>
-<script id="cd0102/10" type="102/10">
+<script id="ch0102/10" type="102/10">
   
 </script>
 
 
-<script id="cd0103/01" type="103/01">
+<script id="ch0103/01" type="103/01">
   var a = +prompt("输入1")
   var b = +prompt("输入2")
   var c = a + b
   console.log(c)
 </script>
-<script id="cd0103/02" type="103/02">
+<script id="ch0103/02" type="103/02">
   var a = +prompt("输入2")
   var b = +prompt("输入3")
   var c = +prompt("输入5")
   var d = (a + b) * c
   console.log(d)
 </script>
-<script id="cd0103/03" type="103/03">
+<script id="ch0103/03" type="103/03">
   var a = +prompt("输入1")
   var b = +prompt("输入1")
   var c = +prompt("输入3")
   var d = parseInt ((a + b) / c) //取商
   console.log(d)
 </script>
-<script id="cd0103/04" type="103/04">
+<script id="ch0103/04" type="103/04">
   var a = +prompt("输入10")
   var b = +prompt("输入3")
   var c = parseInt (a / b) //取商
   var d = a % b
   console.log(c,d)
 </script>
-<script id="cd0103/05" type="103/05">
+<script id="ch0103/05" type="103/05">
   var a = +prompt("输入5")
   var b = +prompt("输入7")
   var c = a / b
   console.log(c.toFixed(9))
 </script>
-<script id="cd0103/06" type="103/06">
+<script id="ch0103/06" type="103/06">
    var a = +prompt("输入10433")
    var b = +prompt("输入60")
    var c = b / a * 100
    console.log(c.toFixed(3) + "%")
 </script>
-<script id="cd0103/07" type="103/07">
+<script id="ch0103/07" type="103/07">
    var x = +prompt("x=2.31")
    var a = +prompt("a=1.2")
    var b = +prompt("b=2")
@@ -224,36 +246,36 @@
    var e = a * x ** 3 + b * x ** 2 + c * x + d
    console.log(e.toFixed(7))
 </script>
-<script id="cd0103/08" type="103/08">
+<script id="ch0103/08" type="103/08">
    var f = +prompt("f=41")
    var c = 5 * (f - 32) / 9
    console.log(c.toFixed(5))
 </script>
-<script id="cd0103/09" type="103/09">
+<script id="ch0103/09" type="103/09">
    var r = +prompt("圆的半径r=3")
    var d = 2 * r
    var c = 2 * Math.PI * r
    var s = Math.PI * r ** 2
    console.log(d.toFixed(4),c.toFixed(4),s.toFixed(4))
 </script>
-<script id="cd0103/10" type="103/10">
+<script id="ch0103/10" type="103/10">
    var r1 = +prompt("r1=1")
    var r2 = +prompt("r2=2")
    var r = 1 / (1 / r1 + 1 / r2)
    console.log(r.toFixed(2))
 </script>
-<script id="cd0103/11" type="103/11">
+<script id="ch0103/11" type="103/11">
   var a = +prompt("被除数a=73.263")
   var b = +prompt("除数b=0.9973")
   var c = a % b
   console.log(c.toFixed(4))
 </script>
-<script id="cd0103/12" type="cd0103/12">
+<script id="ch0103/12" type="103/12">
   var r = +prompt("球半径为r=4")
   var v = 4 * 3.14 * r ** 3 / 3
   console.log(v.toFixed(2))
 </script>
-<script id="cd0103/13" type="103/13">
+<script id="ch0103/13" type="103/13">
   var n = +prompt("输入三位数n=100")
   var a = parseInt (n / 100)
   var b = parseInt (n / 10) - a * 10
@@ -266,13 +288,13 @@
     console.log(d)
   }
 </script>
-<script id="cd0103/14" type="103/14">
+<script id="ch0103/14" type="103/14">
   var h = prompt("输入桶深h = 23")
   var r = prompt("输入桶半径r = 11")
   var n = 20 * 10**3 / (Math.PI * r**2 * h)
   console.log(parseInt(n) + 1) 
 </script>
-<script id="cd0103/15" type="103/15">
+<script id="ch0103/15" type="103/15">
   var n = +prompt("苹果总量n = 10")
   var x = +prompt("虫子吃苹果速度x = 4")
   var y = +prompt("历经时长y = 9")
@@ -286,7 +308,7 @@
     console.log(z) 
   }
 </script>
-<script id="cd0103/16" type="103/16">
+<script id="ch0103/16" type="103/16">
   var Xa = prompt("输入A的横坐标Xa=1")
   var Ya = prompt("输入A的横坐标Ya=1")
   var Xb = prompt("输入A的横坐标Xb=2")
@@ -294,7 +316,7 @@
   var l = Math.sqrt((Xb - Xa)**2 + (Yb - Ya)**2)
   console.log(l.toFixed(3))
 </script>
-<script id="cd0103/17" type="103/17">
+<script id="ch0103/17" type="103/17">
   var x1 = +prompt("输入第一个顶点的横坐标Xa=0")
   var y1 = +prompt("输入第一个顶点的横坐标Ya=0")
   var x2 = +prompt("输入第二个顶点的横坐标Xb=4")
@@ -305,7 +327,7 @@
   var s = ((y2-y3) * x1 + (y3-y1) * x2 + (y1-y2) * x3) / 2
   console.log(s.toFixed(2))
 </script>
-<script id="cd0103/18" type="103/18">
+<script id="ch0103/18" type="103/18">
   var a1 = +prompt("a1 = 1")
   var a2 = +prompt("a2 = 4")
   var n = +prompt("n = 100")
@@ -316,7 +338,7 @@
     console.log("wrong value")
   }
 </script>
-<script id="cd0103/19" type="103/19">
+<script id="ch0103/19" type="103/19">
   var A = +prompt("A = 3")
   var B = +prompt("B = 4")
   if (1<=A,B<=5000) {
@@ -325,7 +347,7 @@
   } else 
   console.log("wrong value")
 </script>
-<script id="cd0103/20" type="103/20">
+<script id="ch0103/20" type="103/20">
   var n = prompt("幂n = 3")
   if (1<=n,n<=31) {
     var s = 2 ** n
@@ -333,7 +355,7 @@
   } else 
   console.log("wrong value")
 </script>
-<script id="cd0104/01" type="104/01">
+<script id="ch0104/01" type="104/01">
   var N = prompt("输入一个整数")
   if (N > 0) {
     console.log("positive")
@@ -342,21 +364,21 @@
   } else 
   console.log("negative")
 </script>
-<script id="cd0104/02" type="104/02">
+<script id="ch0104/02" type="104/02">
   var n = +prompt("输入一个浮点数")
   if (n >= 0) {
     console.log(n)
   } else
   console.log(-n)
 </script>
-<script id="cd0104/03" type="104/03">
+<script id="ch0104/03" type="104/03">
   var n = +prompt("输入一个正整数")
   if (n % 2 ==0) {
     console.log("even")
   } else
     console.log("odd")
 </script>
-<script id="cd0104/04" type="104/04">
+<script id="ch0104/04" type="104/04">
   var f = prompt("输入一个字符")
   var n = f.charCodeAt(f)
    if (n % 2 == 0) {
@@ -365,7 +387,7 @@
     console.log("YES")
    // console.log(String.fromCharCode(num))
 </script>
-<script id="cd0104/05" type="104/05">
+<script id="ch0104/05" type="104/05">
   var x = prompt("输入整数x")
   var y = prompt("输入整数y")
   if (x<0 || x>(2**32) || -(2**31)>y || y>(2**31)) {
@@ -377,14 +399,14 @@
     console.log("<")
   }
 </script>
-<script id="cd0104/06" type="104/06">
+<script id="ch0104/06" type="104/06">
   var n = prompt("输入正整数")
   if (100 - n > 0 && n - 10 >= 0) {
     console.log("1")
   } else 
     console.log("0")
 </script>
-<script id="cd0104/07" type="104/07">
+<script id="ch0104/07" type="104/07">
   var a = prompt("输入幸运数")
   var b = prompt("输入鼓励数")
   if (a >= 10 || b >= 20) {
@@ -392,14 +414,14 @@
   } else
     console.log("0")
 </script>
-<script id="cd0104/08" type="104/08">
+<script id="ch0104/08" type="104/08">
   var n = prompt("输入一个数n")
   if (n % 3 == 0 && n % 5 == 0) {
     console.log("YES")
   } else 
     console.log("NO")
 </script>
-<script id="cd0104/09" type="104/09">
+<script id="ch0104/09" type="104/09">
   var n = prompt("输入一个数n")
   if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
     console.log("3 5 7")
@@ -418,7 +440,7 @@
   } else
     console.log(n)
 </script>
-<script id="cd0104/10" type="104/10">
+<script id="ch0104/10" type="104/10">
   var a = prompt("输入语文成绩")
   var b = prompt("输入数学成绩")
   if (a>=60 && b>=60) {
@@ -428,7 +450,7 @@
   } else 
     console.log("1")
 </script>
-<script id="cd0104/11" type="104/11">
+<script id="ch0104/11" type="104/11">
   var a = prompt("星期a去约会:a=")
   if (a==1 || a==3 || a==5) {
     console.log("NO")
@@ -437,7 +459,7 @@
   } else 
   console.log("wrong value")
 </script>
-<script id="cd0104/12" type="104/12">
+<script id="ch0104/12" type="104/12">
   var s = prompt("输入距离s")
   var t1 = s / 3 + 50
   var t2 = 5 * s / 6
@@ -448,30 +470,129 @@
   } else
     console.log("Walk")
 </script>
-<script id="cd0104/13" type="">
-  
+<script id="ch0104/13" type="104/13">
+  var x = +prompt("输入自变量x的值")
+  if (0 <= x && x < 5) {
+  var y = -x + 2.5
+  console.log(y.toFixed(3))
+  } else if (5 <= x && x < 10) {
+    var y = 2 - 1.5 * (x - 3) * (x - 3)
+    console.log(y.toFixed(3))
+  } else {
+    var y = x / 2 - 1.5
+    console.log(y.toFixed(3))
+  }
 </script>
-<script id="cd0104/14" type="">
-  
+<script id="ch0104/14" type="104/14">
+  var w = +prompt("输入一个整数")
+  var f = prompt("输入一个字符")
+  var p2 = f == "y" ? 5 : 0
+  if (w <= 1000) {
+    var p1 = 8
+  } else if ((w-1000) % 500 ===0) {
+    var p1 = 8 + (w-1000)/500*4
+  } else {
+    var p1 = 12 + parseInt((w-1000)/500)*4
+  }
+  console.log(p1 + p2)
 </script>
-<script id="cd0104/15" type="">
-  
+<script id="ch0104/15" type="104/15">
+  var a = prompt("输入整数a")
+  var b = prompt("输入整数b")
+  var c = prompt("输入整数c")
+  var n = Math.max(a,b,c)
+  console.log(n)
 </script>
-<script id="cd0104/16" type="">
-  
+<script id="ch0104/16" type="104/16">
+  var l1 = +prompt("输入正整数l1")
+  var l2 = +prompt("输入正整数l2")
+  var l3 = +prompt("输入正整数l3")
+  if (l1+l2>l3 && Math.abs(l1-l2<l3) && l1+l3>l2 && Math.abs(l1-l3<l2) && l2+l3>l1 && Math.abs(l2-l3<l1)) {
+    console.log("yes")
+  } else
+  console.log("no")
 </script>
-<script id="cd0104/17" type="">
-  
+<script id="ch0104/17" type="104/17">
+  var a = prompt("输入年份a")
+  if (a % 400 ===0 || a % 4 === 0 && a % 100 !==0) {
+    console.log("Y")
+  } else 
+  console.log("N")
 </script>
-<script id="cd0104/18" type="">
-  
+<script id="ch0104/18" type="104/18">
+  var x = prompt("输入整数x")
+  var y = prompt("输入整数y")
+  if (x>=-1 && x<=1 && y>=-1 && y<=1) {
+    console.log("yes")
+  } else
+  console.log("no")
 </script>
-<script id="cd0104/19" type="">
-  
+<script id="ch0104/19" type="104/19">
+  var x = +prompt("输入整数x")
+  var y = +prompt("输入整数y")
+  var o = prompt("输入操作符")
+  if (o == "+") {
+    z = x + y
+  } else if (o == "-") {
+    z = x - y 
+  } else if (o == "*") {
+    z = x * y 
+  } else 
+    z = y !== 0 ? x / y : "Invalid operator"
+    console.log(z)
 </script>
-<script id="cd0104/20" type="">
-  
+<script id="ch0104/20" type="104/20">
+  var a = +prompt("输入a")
+  var b = +prompt("输入b")
+  var c = +prompt("输入c")
+  var delta = b**2 - 4*a*c
+  if (delta > 0) {
+    var x1 = (-b + Math.sqrt(delta)) / (2 * a)
+    var x2 = (-b - Math.sqrt(delta)) / (2 * a)
+    console.log(x1.toFixed(5),x2.toFixed(5))
+  } else if (delta === 0) {
+    var x = -b / (2 * a)
+    console.log(x.toFixed(5))
+  } else {
+    var m = Math.sqrt(-delta)
+    var x1imag = m / (2 * a) 
+    var x2imag = - m / (2 * a)
+    var x1real = -b / (2 * a)
+    var x2real = -b / (2 * a)
+    var x1real = x1real % 1 === 0 ? x1real : x1real.toFixed(5)
+    var x1real = x1real >= 0 ? "+" + x1real : "" + x1real
+    var x1imag = x1imag % 1 === 0 ? x1imag : x1imag.toFixed(5)
+    var x2real = x2real % 1 === 0 ? x2real : x2real.toFixed(5)
+    var x2real = x2real >= 0 ? "+" + x2real : "" + x2real
+    var x2imag = x2imag % 1 === 0 ? x2imag : x2imag.toFixed(5)
+    if (x1imag === 1) {
+      x1imag = "i"
+    } else if (x1imag === -1) {
+      x1imag = "-i"
+    } else {
+      x1imag = x1imag + "i"
+    }
+    if (x2imag === 1) {
+      x2imag = "i"
+    } else if (x2imag === -1) {
+      x2imag = "-i"
+    } else {
+      x2imag = x2imag + "i"
+    }
+    console.log(x1imag + x1real,x2imag + x2real)
+  }
 </script>
-<script id="cd0104/21" type="">
-  
+<script id="ch0104/21" type="104/21">
+  var n = +prompt("苹果总量n = 10")
+  var x = +prompt("虫子吃苹果速度x = 4")
+  var y = +prompt("历经时长y = 9")
+  if (y > n * x) {
+    console.log("0")
+  } else if (y % x !==0) {
+    var z = n - parseInt(y / x) -1
+    console.log(z)
+  } else {
+    var z = n - parseInt(y / x)
+    console.log(z) 
+  }
 </script>
