@@ -46,27 +46,34 @@
   }
 </script>
 <script id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出" type="done">
-  var a = +prompt('输入正整数a')
-  var b = +prompt('输入正整数b')
-  var c = +prompt('输入正整数c')
-  if (a > b && a > c)
-    var max = a
-    else if (a > b && a < c || a > c && a < b)
-      var mid = a
-      else if (a < b && a < c)
-        var min = a
-  if (b > a && b > c)
-    var max = b
-    else if (b > a && b < c || b > c && b < a)
-      var mid = b
-      else if (b < a && b < c)
-        var min = b
-  if (c > a && c > b)
-    var max = c
-    else if (c > b && c < a || c > a && c < b)
-      var mid = c
-      else if (c < b && c < a)
-        var min = c
+  var N = +prompt("一个正整数")
+  var N1 = +prompt("一个正整数")
+  var N2 = +prompt("一个正整数")
+  var max = -Infinity
+  var mid = 0
+  var min = Infinity
+  if (N1 > N) {
+    max = N1
+    min = N
+    if (N2 > N1) {
+      max = N2
+      mid = N1
+    } else if(N2 > N) {
+      mid = N2
+    }
+  } else {
+    max = N
+    min = N1
+    if (N2 > N) {
+      max = N2
+      mid = N
+    } else if(N2 > N1) {
+      mid = N2
+    } else {
+      mid = N1
+      min = N2
+    }
+  }
   console.log(min,mid,max)
 </script> 
 
@@ -1216,29 +1223,47 @@
     }
   }
 </script>
-<script id="ch0105/29" type="buhui">
+<script id="ch0105/29" type="105/29">
   var n = +prompt('输入一个整数')
-  var m = 1
-  var a = 0
-  var b = 0
-  var c = 0
-  var M = 100000000
-  for (var i=1; i<=8; i++) {
-    m = m * 10
-    if (n / (m/10) >= 1) {
-      b = (n % m - a) / (m/10) 
-      a = a + b * (m/10)
-      console.log(b)
-      for (var j=1; j<=8; j++) {
-        if (n / M < 1) {
-          M = M / 10
-          console.log(M)
-        }   
-      } 
-    } 
+  var c = 1
+  var m = -Infinity
+  var A = 0
+  var B = 0
+  var C = 0
+  var nn = Math.abs(n)
+  for (var i =1; ; i++) {
+    m = 10**i
+    if (m > nn) {
+      var j = i
+      break
+    }
+  } 
+  for (var k=1; k<=j; k++) {
+    if (j == 1)
+      var N = nn
+    if (j !== 1) {
+      if (k == 1) {
+        var a = nn % 10**k
+        A = a * 10**(j-k)
+      }
+      if (k > 1) {
+        var b = (nn % 10**k - nn % 10**(k-1)) / 10**(k-1)
+        B = b * 10**(j-k)
+        C = C + B
+      }
+    }
   }
-  
-  console.log(c)
+    if (j == 1) {
+      if (n >= 0)
+      console.log(N)
+        else 
+          console.log(-N)
+    } else {
+        if (n >= 0)
+        console.log(A + C)
+          else 
+            console.log(-(A + C))
+      }
 </script>
 <script id="ch0105/30" type="105/30">
   var m = +prompt('输入1到100000的正整数')
@@ -1264,20 +1289,23 @@
 <script id="ch0105/31" type="buhui">
   
 </script>
-<script id="ch0105/32" type="buhui">
+<script id="ch0105/32" type="105/32">
   var n = +prompt('输入正整数')
-  var q = 2
+  var q = 0
   var p = 1
-  for (var i=2; i<=n; i++) {
-    q = q + p
-    p = q
-    console.log(q)        
+  var total = 0
+  for (var i=1; i<=n; i++) {
+    if (i !== 1) {
+      var s = q
+      q = p
+      p = q + s
+    }
+    if (i == 1) 
+      q = p
+    r = q / p
+    total = total + r
   }
-  for (var i=2; i<=n; i++) {
-    p = q 
-    q = q + p   
-    console.log(p)   
-  }
+  console.log((total + n).toFixed(4))
 </script>
 <script id="ch0105/33" type="105/33">
   var n = +prompt('输入一个正整数')
