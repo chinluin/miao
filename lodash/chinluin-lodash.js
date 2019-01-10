@@ -24,8 +24,9 @@ var chinluin = {
   compact: function(ary) {
     let result = []
     for(let i=0; i<ary.lengthl; i++) {
-      if(ary[i] | 0)
+      if(ary[i] | 0) {
         result.push(ary[i])
+      }
     }
     return result
   },
