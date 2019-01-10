@@ -20,7 +20,7 @@ var chinluin = {
     }
     return result
   },
-
+  
   compact: function compact(ary) {
     let result = []
     for(let i=0; i<ary.lengthl; i++) {
@@ -28,5 +28,5 @@ var chinluin = {
         result.push(ary[i])
     }
     return result
-  },
+  }
 }
