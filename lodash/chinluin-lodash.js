@@ -1,5 +1,5 @@
 var chinluin = {
-  chunk: function chunk(ary,size) {
+  chunk: function(ary,size) {
     let n = Math.floor(ary.length / size)
     if(size === 0 || n === 0)
       return ary
@@ -8,7 +8,7 @@ var chinluin = {
     for(let i=1; i<=n; i++) {
       count++
       result.push([])
-      for(let j=i*2-2; j<i*2; j++) {
+      for(let j=i*size-size; j<i*size; j++) {
         result[count].push(ary[j])
       }
     }
@@ -21,12 +21,12 @@ var chinluin = {
     return result
   },
   
-  compact: function compact(ary) {
+  compact: function(ary) {
     let result = []
     for(let i=0; i<ary.lengthl; i++) {
       if(ary[i] | 0)
         result.push(ary[i])
     }
     return result
-  }
+  },
 }
