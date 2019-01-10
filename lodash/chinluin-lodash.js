@@ -20,11 +20,10 @@ var chinluin = {
     }
     return result
   },
-  
   compact: function(ary) {
     let result = []
-    for(let i=0; i<ary.lengthl; i++) {
-      if(ary[i] | 0) {
+    for(let i=0; i<ary.length; i++) {
+      if(ary[i]) {
         result.push(ary[i])
       }
     }
