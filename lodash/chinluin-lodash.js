@@ -19,7 +19,7 @@ var chinluin = function() {
       result[count].unshift(ary[ary.length-i])
     }
     return result
-  },
+  }
 
   function compact(ary) {
     let result = []
@@ -29,7 +29,7 @@ var chinluin = function() {
       }
     }
     return result
-  },
+  }
 
   function difference(ary,val) {
     let map = {}
@@ -43,7 +43,7 @@ var chinluin = function() {
         result.push(ary[i])
     }
     return result
-  },
+  }
 
   function drop(ary,n=1) {
     ary.splice(0,n)
@@ -309,7 +309,7 @@ var chinluin = function() {
       }
     }
     return result
-  },
+  }
 
   function uniq(ary) {
     let result = []
