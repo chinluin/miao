@@ -301,7 +301,7 @@ var chinluin = function() {
       }
     }
     return result
-  },
+  }
 
   function uniq(ary) {
     let result = []
