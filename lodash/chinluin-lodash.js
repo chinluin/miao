@@ -1,5 +1,5 @@
 var chinluin = function() {
-  function chunk(ary,size) {
+  chunk: function chunk(ary,size) {
     let n = Math.floor(ary.length / size)
     if(size === 0 || n === 0)
       return ary
@@ -19,9 +19,9 @@ var chinluin = function() {
       result[count].unshift(ary[ary.length-i])
     }
     return result
-  }
+  },
 
-  function compact(ary) {
+  compact: function compact(ary) {
     let result = []
     for(let i=0; i<ary.length; i++) {
       if(ary[i]) {
@@ -29,9 +29,9 @@ var chinluin = function() {
       }
     }
     return result
-  }
+  },
 
-  function difference(ary,val) {
+  difference: function difference(ary,val) {
     let map = {}
     for(let i=0; i<val.length; i++) {
       if(!(val[i] in map))
@@ -43,28 +43,28 @@ var chinluin = function() {
         result.push(ary[i])
     }
     return result
-  }
+  },
 
-  function drop(ary,n=1) {
+  drop: function drop(ary,n=1) {
     ary.splice(0,n)
     return ary
-  }
+  },
 
-  function dropRight(ary,n=1) {
+  dropRight: function dropRight(ary,n=1) {
     if(n >= ary.length)
       return []
     ary.splice(ary.length-n,n)
     return ary
-  }
+  },
 
-  function fill(ary, val, start=0, end=ary.length) {
+  fill: function fill(ary, val, start=0, end=ary.length) {
     for(let i=start; i<end; i++) {
       ary[i] = val
     }
     return ary
-  }
+  },
 
-  function fromPairs(pairs) {
+  fromPairs: function fromPairs(pairs) {
     let result = {}
     for(let i=0; i<pairs.length; i++) {
       if(!(pairs[i][0] in result))
@@ -73,34 +73,34 @@ var chinluin = function() {
           continue
     }
     return result
-  }
+  },
 
-  function head(ary) {
+  head: function head(ary) {
     if(ary.length === 0)
       return undefined
     return ary[0]
-  }
+  },
 
-  function indexOf(ary, val, fromIndex=0) {
+  indexOf: function indexOf(ary, val, fromIndex=0) {
     for(let i=fromIndex; i<ary.length; i++) {
       if(ary[i] === val)
         return i
     }
     return -1
-  }
+  },
 
-  function initial() {
+  initial: function initial() {
     for(let i=0; i<arguments.length; i++) {
       arguments[i].pop(ary[ary.length-1])
       return arguments[i]
     }
-  }
+  },
 
-  function intersection() {
+  intersection: function intersection() {
     
-  }
+  },
 
-  function join(ary,separator=',') {
+  join: function join(ary,separator=',') {
     if(ary.length === 0)
       return []
     let result = ''
@@ -108,21 +108,21 @@ var chinluin = function() {
       result = result + ary[i] + separator
     }
     return result + ary[ary.length-1]
-  }
+  },
 
-  function last(ary) {
+  last: function last(ary) {
     return ary[ary.length-1]
-  }
+  },
 
-  function lastIndexOf(ary, val, fromIndex=ary.length-1) {
+  lastIndexOf: function lastIndexOf(ary, val, fromIndex=ary.length-1) {
     for(let i=fromIndex; i>=0; i--) {
       if(ary[i] === val)
         return i
     }
     return -1
-  }
+  },
 
-  function reverse(ary) {
+  reverse: function reverse(ary) {
     let n = ary.length
     let mid = Math.floor(n / 2)
     for(let i=0; i<=mid; i++) {
@@ -134,9 +134,9 @@ var chinluin = function() {
       ary[n - 1 - i] = temp
     }
     return ary
-  }
+  },
 
-  function pull(ary) {
+  pull: function pull(ary) {
     let result = []
     let map = {}
     for(let i=1; i<arguments.length; i++) {
@@ -148,9 +148,9 @@ var chinluin = function() {
         result.push(ary[i])
     }
     return result  
-  }
+  },
 
-  function pullAll(ary,val) {
+  pullAll: function pullAll(ary,val) {
     let result = []
     let map = {}
     for(let i=0; i<val.length; i++) {
@@ -162,9 +162,9 @@ var chinluin = function() {
         result.push(ary[i])
     }
     return result    
-  }
+  },
 
-  function pullAt(ary) {
+  pullAt: function pullAt(ary) {
     let result = []
     for(let i=0; i<ary.length; i++) {
       for(let j=1; j<arguments.length; j++) {
@@ -181,9 +181,9 @@ var chinluin = function() {
       }
     }
     return result
-  }
+  },
 
-  function remove(ary,test) {
+  remove: function remove(ary,test) {
     let result = []
     for(let i=0; i<ary.length; i++) {
       if(test(ary[i])) {
@@ -193,49 +193,41 @@ var chinluin = function() {
       }
     }
     return result
-  }
+  },
 
-  function slice(ary, start=0, end=ary.length) {
+  slice: function slice(ary, start=0, end=ary.length) {
     let result = []
     for(let i=start; i<ary.length; i++) {
       result.push(ary[i])
     }
     return result
-  }
+  },
 
-  function sortedIndex(ary, val) {
+  sortedIndex: function sortedIndex(ary, val) {
     for(var i=0; i<ary.length; i++) {
       if(ary[i] >= val)
         return i
     }
     return i
-  }
+  },
 
-  function sortedIndexOf(ary,val) {
+  sortedIndexOf: function sortedIndexOf(ary,val) {
     for(let i=0; i<ary.length; i++) {
       if(ary[i] === val)
         return i
     }
     return -1
-  }
+  },
 
-  function sortedLastIndex(art,val) {
-    for(var i=0; i<ary.length; i++) {
-      if(ary[i] > val)
-        return i
-    }
-    return i
-  }
-
-  function sortedLastIndexOf(ary,val) {
+  sortedLastIndex: function sortedLastIndexOf(ary,val) {
     for(let i=ary.length-1; i>=0; i--) {
       if(ary[i] === val)
         return i
     }
     return -1   
-  }
+  },
 
-  function sortedUniq(ary) {
+  sortedUniq: function sortedUniq(ary) {
     let result = []
     let map = {}
     for(let i=0; i<ary.length; i++) {
@@ -246,9 +238,9 @@ var chinluin = function() {
         continue
     }  
     return result    
-  }
+  },
 
-  function sortedUniqBy(ary,test) {
+  sortedUniqBy: function sortedUniqBy(ary,test) {
     let result = []
     for(let i=0; i<ary.length; i++) {
       result.push(test(ary[i]))
@@ -264,17 +256,17 @@ var chinluin = function() {
       }
     }
     return resultNoReapt
-  }
+  },
 
-  function tail(ary) {
+  tail: function tail(ary) {
     let result = []
     for(let i=1; i<ary.length; i++) {
       result.push(ary[i])
     }
     return result
-  }
+  },
 
-  function take(ary, n=1) {
+  take: function take(ary, n=1) {
     let result = []
     if(n > ary.length)
       n = ary.length
@@ -282,9 +274,9 @@ var chinluin = function() {
       result.push(ary[i])
     }
     return result
-  }
+  },
 
-  function takeRight(ary, n=1) {
+  takeRight: function takeRight(ary, n=1) {
     let result = []
     if(n > ary.length)
       n = ary.length
@@ -292,9 +284,9 @@ var chinluin = function() {
       result.unshift(ary[i])
     }
     return result
-  }
+  },
 
-  function union() {
+  union: function union() {
     let len = arguments.length
     let map = {}
     let result = []
@@ -309,9 +301,9 @@ var chinluin = function() {
       }
     }
     return result
-  }
+  },
 
-  function uniq(ary) {
+  uniq: function uniq(ary) {
     let result = []
     let map = {}
     for(let i=0; i<ary.length; i++) {
@@ -322,9 +314,9 @@ var chinluin = function() {
         continue
     }  
     return result    
-  }
+  },
 
-  function xor() {
+  xor: function xor() {
     let result = []
     let map = {}
     for(let j=0; j<arguments.length; j++) {
@@ -339,43 +331,43 @@ var chinluin = function() {
       }
     }  
     return result   
-  }
+  },
 
 
-  return {
-    chunk,
-    compact,
-    difference,
-    drop,
-    dropRight,
-    fill,
-    fromPairs,
-    head,
-    indexOf,
-    initial,
-    intersection,
-    join,
-    last,
-    lastIndexOf,
-    reverse,
-    pull,
-    pullAll,
-    pullAt,
-    remove,
-    slice,
-    sortedIndex,
-    sortedIndexOf,
-    sortedLastIndex,
-    sortedLastIndexOf,
-    sortedUniq,
-    sortedUniqBy,
-    tail,
-    take,
-    takeRight,
-    union,
-    uniq,
-    xor,
-  }
+  // return {
+  //   chunk,
+  //   compact,
+  //   difference,
+  //   drop,
+  //   dropRight,
+  //   fill,
+  //   fromPairs,
+  //   head,
+  //   indexOf,
+  //   initial,
+  //   intersection,
+  //   join,
+  //   last,
+  //   lastIndexOf,
+  //   reverse,
+  //   pull,
+  //   pullAll,
+  //   pullAt,
+  //   remove,
+  //   slice,
+  //   sortedIndex,
+  //   sortedIndexOf,
+  //   sortedLastIndex,
+  //   sortedLastIndexOf,
+  //   sortedUniq,
+  //   sortedUniqBy,
+  //   tail,
+  //   take,
+  //   takeRight,
+  //   union,
+  //   uniq,
+  //   xor,
+  // }
 
 
 
