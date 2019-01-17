@@ -219,6 +219,14 @@ var chinluin = function() {
     return -1
   }
 
+  function sortedLastIndex(ary,val) {
+    for(let i=ary.length-1; i>=0; i--) {
+      if(ary[i] === val)
+        return i+1
+    }
+    return -1   
+  }
+
   function sortedLastIndexOf(ary,val) {
     for(let i=ary.length-1; i>=0; i--) {
       if(ary[i] === val)
