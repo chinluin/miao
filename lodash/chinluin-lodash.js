@@ -31,11 +31,13 @@ var chinluin = function() {
     return result
   }
 
-  function difference(ary,val) {
+  function difference(ary) {
     let map = {}
-    for(let i=0; i<val.length; i++) {
-      if(!(val[i] in map))
-        map[val[i]] = 1
+    for(let j=1; j<arguments.length; j++) {
+      for(let i=0; i<arguments[j].length; i++) {
+        if(!(arguments[j][i] in map))
+          map[arguments[j][i]] = 1
+      }
     }
     let result = []
     for(let i=0; i<ary.length; i++) {
@@ -43,7 +45,7 @@ var chinluin = function() {
         result.push(ary[i])
     }
     return result
-  }
+  } 
 
   function drop(ary,n=1) {
     ary.splice(0,n)
@@ -89,15 +91,39 @@ var chinluin = function() {
     return -1
   }
 
-  function initial() {
-    for(let i=0; i<arguments.length; i++) {
-      arguments[i].pop(ary[ary.length-1])
-      return arguments[i]
-    }
+  var initial = function(ary) {
+      ary.pop()
+      return ary
   }
 
   function intersection() {
-    
+    let noReapt = []
+    for(let i=0; i<arguments.length; i++) {
+      let noReaptMap = {}
+      noReapt.push([])
+      for(let j=0; j<arguments[i].length; j++) {
+        if(!(arguments[i][j] in noReaptMap)) {
+          noReaptMap[arguments[i][j]] = 1
+          noReapt[i].push(arguments[i][j])
+        }
+      }
+    }
+    let map = {}
+    for(let i of noReapt[0]) {
+      map[noReapt[0][i-1]] = 1
+    }
+    for(let i=1; i<noReapt.length; i++) {
+      for(let j=0; j<noReapt[i].length; j++) {
+        if(noReapt[i][j] in map)
+          map[noReapt[i][j]]++
+      }
+    }
+    let result = []
+    for(let key in map) {
+      if(map[key] === noReapt.length)
+        result.push(+key)
+    }
+    return result    
   }
 
   function join(ary,separator=',') {
@@ -332,8 +358,8 @@ var chinluin = function() {
         if(!(arguments[j][i] in map)) {
           result.push(arguments[j][i])
           map[arguments[j][i]] = 1
-        } else {
-          let a =result.indexOf(arguments[j][i])
+        } else if(result.indexOf(arguments[j][i]) != -1){
+          let a = result.indexOf(arguments[j][i])
           result.splice(a,1)
         }
       }
