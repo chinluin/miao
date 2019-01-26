@@ -442,7 +442,7 @@ var chinluin = function() {
         res.push(ary[i])
     }
     return res
-  },
+  }
 
   function zip(...arys) {
     let res = []
@@ -450,7 +450,7 @@ var chinluin = function() {
         res[i] = arys.map(it => it[i])
     }
     return res
-  },
+  }
 
   function forEach(coll,action) {
     if (Array.isArray(coll)) {
@@ -463,7 +463,7 @@ var chinluin = function() {
       }
     }
     return coll
-  },
+  }
 
   function includes(coll, val, fromIndex = 0) {
     if(Array.isArray(coll) || typeof coll === 'string') {
@@ -481,7 +481,7 @@ var chinluin = function() {
       }
       return false
     }
-  },
+  }
 
   function reduce(coll, f, accu) {
     for (var val in coll) {
@@ -492,7 +492,7 @@ var chinluin = function() {
         accu = f(accu, coll[val], val, coll)
     }
     return accu    
-  },
+  }
 
   function map(coll, f) {
     let res = []
@@ -501,7 +501,7 @@ var chinluin = function() {
         res.push(curr)
       }
       return res
-  },
+  }
 
   function reduceRight(coll, f, accu) {
     for (var i=coll.length-1; i>=0; i--) {
@@ -512,7 +512,7 @@ var chinluin = function() {
         accu = f(accu, coll[i], i, coll)
     }
     return accu    
-  },
+  }
 
   function size(coll) {
     if (Array.isArray(coll) || typeof coll == 'string') {
@@ -524,7 +524,7 @@ var chinluin = function() {
         c++
       return c
     }
-  },
+  }
 
   function eq(val, other) {
     if(Number.isNaN(val) && Number.isNaN(other)) {
@@ -534,116 +534,116 @@ var chinluin = function() {
       return true
      else 
       return false
-  },
+  }
 
   function gt(val, other) {
     if(val > other)
       return true
       else 
         return false
-  },
+  }
 
   function gte(val, other) {
     if(val >= other)
       return true
       else 
         return false
-  },
+  }
 
   function isArguments(val) {
     return Object.prototype.toString.call(val) === '[object Arguments]'
-  },
+  }
 
   function isArray(val) {
     return Object.prototype.toString.call(val) === '[object Array]'
-  },
+  }
 
   function isArrayBuffer(val) {
     return Object.prototype.toString.call(val) === '[object ArrayBuffer]'    
-  },
+  }
 
   function isArrayLike(val) {
     return Object.prototype.toString.call(val) !== "[object Function]" && val.length >= 0 &&  val.length <= Number.MAX_SAFE_INTEGER
-  },
+  }
 
   function isArrayLikeObject(val) {
     return Object.prototype.toString.call(val) !== "[object Function]" && typeof val === 'object' && val.length >= 0 &&  val.length <= Number.MAX_SAFE_INTEGER
-  },
+  }
 
   function isBoolean(val) {
     return Object.prototype.toString.call(val) === '[object Boolean]'
-  },
+  }
 
   function isDate(val) {
     return Object.prototype.toString.call(val) === '[object Date]'
-  },
+  }
 
   function isElement(val) {
     return Object.prototype.toString.call(val) === '[object HTMLBodyElement]'
-  },
+  }
 
   function isEmpty(val) {
     if(val === null || val.length === undefined)
       return true
       else 
         return size(val) === 0
-  },
+  }
 
   function isError(val) {
     return Object.prototype.toString.call(val) === '[object Error]'
-  },
+  }
 
   function isFinite(val) {
     return typeof val === "number" && val <= Number.MAX_VALUE && val >= Number.MIN_VALUE
-  },
+  }
 
   function isFunction(val) {
     return Object.prototype.toString.call(val) === '[object Function]' 
-  },
+  }
 
   function isInteger(val) {
     return typeof val === 'number' && isFinite(val)
-  },
+  }
 
   function isLength(val) {
     return isArrayLike(val) && isInteger(val)
-  },
+  }
 
   function isMap(val) {
     return Object.prototype.toString.call(val) === '[object Map]'
-  },
+  }
 
   function isNaN(val) {
     return (val !== val && typeof val === 'number') || (typeof val === "object" && val.toString() === "NaN")
-  },
+  }
 
   function isNull(val) {
     return Object.prototype.toString.call(val) === '[object Null]'
-  },
+  }
 
   function isUndefined(val) {
     return Object.prototype.toString.call(val) === '[object Undefined]'
-  },
+  }
 
   function isNumber(val) {
     return Object.prototype.toString.call(val) === '[object Number]'
-  },
+  }
 
   function isObject(val) {
     return Object.prototype.toString.call(val) === '[object Object]'
-  },
+  }
 
   function isString(val) {
     return Object.prototype.toString.call(val) === '[object String]'
-  },
+  }
 
   function lt(val, other) {
     return val < other
-  },
+  }
 
   function lte(val, other) {
     return val <= other
-  },
+  }
 
   function toArray(val) {
     let res = []
@@ -652,7 +652,7 @@ var chinluin = function() {
         res.push(val[key])
     }
     return res
-  },
+  }
 
   function toFinite(val) {
     if(val === Infinity)
@@ -661,7 +661,7 @@ var chinluin = function() {
       return -1.7976931348623157e+308
         else
           return Number(val)
-  },
+  }
 
 
 
@@ -698,46 +698,46 @@ var chinluin = function() {
     union: union,
     uniq: uniq,
     xor: xor,
-    flatten,
-    flattenDeep,
-    flattenDepth,
-    nth,
-    unzip,
-    zip,
-    forEach,
-    includes,
-    reduce,
-    map,
-    reduceRight,
-    size,
-    eq,
-    gt,
-    gte,
-    isArguments,
-    isArray,
-    isArrayBuffer,
-    isArrayLike,
-    isArrayLikeObject,
-    isBoolean,
-    isDate,
-    isElement,
-    isEmpty,
-    isError,
-    isFinite,
-    isFunction,
-    isInteger,
-    isLength,
-    isMap,
-    isNaN,
-    isNull,
-    isUndefined,
-    isNumber,
-    isObject,
-    isString,
-    lt,
-    lte,
-    toArray,
-    toFinite,
+    flatten: flatten,
+    flattenDeep: flattenDeep,
+    flattenDepth: flattenDepth,
+    nth: nth,
+    unzip: unzip,
+    zip: zip,
+    forEach: forEach,
+    includes: includes,
+    reduce: reduce,
+    map: map,
+    reduceRight: reduceRight,
+    size: size,
+    eq: eq,
+    gt: gt,
+    gte: gte,
+    isArguments: isArguments,
+    isArray: isArray,
+    isArrayBuffer: isArrayBuffer,
+    isArrayLike: isArrayLike,
+    isArrayLikeObject: isArrayLikeObject,
+    isBoolean: isBoolean,
+    isDate: isDate,
+    isElement: isElement,
+    isEmpty: isEmpty,
+    isError: isError,
+    isFinite: isFinite,
+    isFunction: isFunction,
+    isInteger: isInteger,
+    isLength: isLength,
+    isMap: isMap,
+    isNaN: isNaN,
+    isNull: isNull,
+    isUndefined: isUndefined,
+    isNumber: isNumber,
+    isObject: isObject,
+    isString: isString,
+    lt: lt,
+    lte: lte,
+    toArray: toArray,
+    toFinite: toFinite,
   }
 
 
